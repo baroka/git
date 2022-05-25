@@ -13,8 +13,8 @@ RUN chmod a+x entrypoint.sh
 WORKDIR /bin
 
 # Copy git script
-COPY git-push.sh .
-RUN chmod a+x git-push.sh
+COPY git-update.sh .
+RUN chmod a+x git-update.sh
 
 # Install packages
 RUN apk update && apk add --no-cache git git-lfs less openssh && \

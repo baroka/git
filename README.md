@@ -1,3 +1,4 @@
+```shell
 Docker image for git. 
 
 PREREQUISITES
@@ -27,3 +28,4 @@ INSTALLATION
 
  - $DOCKERDIR points to your local path for script files
  - $GIT_EMAIL, $GIT_NAME, $GIT_TOKEN. Github parameters
+```
