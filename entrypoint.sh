@@ -7,7 +7,8 @@ git_update_image() {
 	git config --global --add safe.directory "$1$GIT_FOLDER"
 	git add -A
 	git commit -am "commit"
-	echo `basename $1`
+	filename=`basename $1`
+	echo "$filename"
 	#git push https://$GIT_TOKEN@github.com/$GIT_NAME/$1.git
 }
 
