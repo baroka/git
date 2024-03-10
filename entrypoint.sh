@@ -26,3 +26,6 @@ for dir in /git/*/ ; do
 		git_update_image $dir
 	fi
 done
+
+# Git stop
+echo "git stop.."
