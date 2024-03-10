@@ -3,13 +3,14 @@
 
 # Git update image
 git_update_image() {
+	echo "Update $1$GIT_FOLDER"
+	
 	cd "$1$GIT_FOLDER"
 	git config --global --add safe.directory "$1$GIT_FOLDER"
 	git add -A
 	git commit -am "commit"
 	filename=`basename $1`
-	echo "$filename"
-	#git push https://$GIT_TOKEN@github.com/$GIT_NAME/$1.git
+	git push https://$GIT_TOKEN@github.com/$GIT_NAME/$filename.git
 }
 
 # Git start
