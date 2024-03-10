@@ -17,7 +17,7 @@ INSTALLATION
     security_opt:
       - no-new-privileges:true
     volumes:
-      - $DOCKERDIR/git:/git/git
+      - $DOCKERDIR:/git
     environment:
       - TZ=$TZ
       - PGID=$PGID
@@ -25,7 +25,9 @@ INSTALLATION
       - GIT_EMAIL=$GIT_EMAIL
       - GIT_NAME=$GIT_NAME
       - GIT_TOKEN=$GIT_TOKEN
+      - GIT_FOLDER=$GIT_FOLDER
 
- - $DOCKERDIR points to your local path for script files
+ - $DOCKERDIR points to your local path with subdirectories with Docker repos
  - $GIT_EMAIL, $GIT_NAME, $GIT_TOKEN. Github parameters
+ - $GIT_FOLDER. Folder name with Dockerfile and subfolder with .git
 ```
