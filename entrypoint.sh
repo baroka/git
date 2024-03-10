@@ -7,7 +7,7 @@ git_update_image() {
 	git config --global --add safe.directory "$1$GIT_FOLDER"
 	git add -A
 	git commit -am "commit"
-	git push https://$GIT_TOKEN@github.com/$GIT_NAME/$1.git
+	#git push https://$GIT_TOKEN@github.com/$GIT_NAME/$1.git
 }
 
 # Git start
@@ -18,9 +18,7 @@ git config --global user.email "$GIT_EMAIL"
 git config --global user.name "$GIT_NAME"
 
 # Git update all images
-cd /git
 for dir in /git/*/ ; do
-	echo "$dir"
 	if [ -d "$dir/$GIT_FOLDER" ]; then
 		git_update_image $dir
 	fi
