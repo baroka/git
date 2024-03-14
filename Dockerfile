@@ -13,7 +13,8 @@ WORKDIR /bin
 
 # Install packages
 RUN apk update && apk add --no-cache git git-lfs less openssh && \
-    git lfs install
+    git lfs install && \
+    rm -rf /tmp/*
 
 # Timezone
 RUN apk update && apk add tzdata
