@@ -6,7 +6,6 @@ git_update_image() {
 	echo "Update $1"
 	
 	cd "$1"
-	git config --global --add safe.directory "$1"
 	git add -A
 	git commit -am "commit"
 	filename=`basename $1`
@@ -19,6 +18,7 @@ echo "git start.."
 # Git set mail and user
 git config --global user.email "$GIT_EMAIL"
 git config --global user.name "$GIT_NAME"
+git config --global --add safe.directory '/git/*'
 
 # Git update all images
 for dir in /git/*/ ; do
@@ -29,6 +29,3 @@ done
 
 # Git stop
 echo "git stop.."
-
-touch /tmp/file.txt
-tail -f /tmp/file.txt
