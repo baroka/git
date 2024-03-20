@@ -6,12 +6,16 @@ git_update_image() {
 	echo "Update $1"
 	
 	cd "$1"
-	#git config --global --add safe.directory "$1"
-	#git add -A
-	#git commit -am "commit"
+	git config --global --add safe.directory "$1"
+	echo a
+	git add -A
+	echo b
+	git commit -am "commit"
+	echo c
 	filename=`basename $1`
-	echo $filename
-	#git push https://$GIT_TOKEN@github.com/$GIT_NAME/$filename.git
+	echo d
+	git push https://$GIT_TOKEN@github.com/$GIT_NAME/$filename.git
+	echo e
 }
 
 # Git start
