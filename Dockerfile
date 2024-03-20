@@ -3,12 +3,6 @@
 
 FROM alpine:latest
 
-WORKDIR /work
-
-# Copy entrypoint script
-COPY entrypoint.sh .
-RUN chmod a+x entrypoint.sh
-
 WORKDIR /bin
 
 # Install packages
@@ -20,6 +14,12 @@ RUN apk update && apk add --no-cache git git-lfs less openssh && \
 RUN apk update && apk add tzdata
 ENV TZ=Europe/Madrid
 RUN cp /usr/share/zoneinfo/Europe/Madrid /etc/localtime
+
+WORKDIR /work
+
+# Copy entrypoint script
+COPY entrypoint.sh .
+RUN chmod a+x entrypoint.sh
 
 WORKDIR /git
 

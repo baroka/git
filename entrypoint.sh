@@ -3,14 +3,15 @@
 
 # Git update image
 git_update_image() {
-	echo "Update $1$GIT_FOLDER"
+	echo "Update $1"
 	
-	cd "$1$GIT_FOLDER"
-	git config --global --add safe.directory "$1$GIT_FOLDER"
-	git add -A
-	git commit -am "commit"
+	cd "$1"
+	#git config --global --add safe.directory "$1"
+	#git add -A
+	#git commit -am "commit"
 	filename=`basename $1`
-	git push https://$GIT_TOKEN@github.com/$GIT_NAME/$filename.git
+	echo $filename
+	#git push https://$GIT_TOKEN@github.com/$GIT_NAME/$filename.git
 }
 
 # Git start
@@ -22,10 +23,13 @@ git config --global user.name "$GIT_NAME"
 
 # Git update all images
 for dir in /git/*/ ; do
-	if [ -d "$dir/$GIT_FOLDER" ]; then
+	if [ -d "$dir" ]; then
 		git_update_image $dir
 	fi
 done
 
 # Git stop
 echo "git stop.."
+
+touch /tmp/file.txt
+tail -f /tmp/file.txt
