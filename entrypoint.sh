@@ -8,7 +8,7 @@ git_update_image() {
 	cd "$1"
 	git config --global --add safe.directory "$1"
 	#create repository on github if not exists
-	#git init if not created
+	#git init if not created -> docker run -it -v xxx/repo:/git --entrypoint=/bin/sh baroka/git:latest
 	git add -A
 	git commit -am "commit"
 	filename=`basename $1`
